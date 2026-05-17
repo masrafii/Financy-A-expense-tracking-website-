@@ -1,0 +1,97 @@
+/* Services Section Styles */
+.services-container {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin: 120px auto 50px auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.services-header h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.services-header p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    font-size: 3.5em;
+    color: #60a5fa;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .services-container {
+    background-color: #1e293b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .services-header h2 {
+    color: #f1f5f9;
+}
+
+body.dark-mode .services-header p {
+    color: #94a3b8;
+}
+
+body.dark-mode .service-card {
+    background-color: #334155;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .service-icon {
+    color: #93c5fd;
+}
+
+body.dark-mode .service-card h3 {
+    color: #f1f5f9;
+}
+
+body.dark-mode .service-card p {
+    color: #cbd5e1;
+}

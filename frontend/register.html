@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register</title>
+  <link rel="stylesheet" href="../css/register.css" />
+
+</head>
+<body>
+ <div class="bg-image" style="background-image: url('../assets/login_back.png'); background-size: cover; background-position: center; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+
+
+
+
+  <!-- REGISTRATION FORM -->
+  <div class="box_container">
+    <form id="registerForm" action="../backend/register.php" method="POST">
+
+
+
+      <h2 class="registration_style">Registration</h2>
+
+      <!-- Name -->
+      <div class="input-box">
+         <input class="userinput" type="text" name="name" id="registerName" placeholder="Enter your name" required />
+      </div>
+
+      <!-- Email -->
+      <div class="input-box">
+        <input class="userinput" type="email" name="email" id="registerEmail" placeholder="Enter your email" required />
+      </div>
+
+      <!-- Password -->
+      <div class="input-box">
+        <input class="userinput" type="password" name="password" id="registerPassword" placeholder="Create password" required />
+      </div>
+
+      <!-- Confirm Password (only frontend validation, not sent to PHP) -->
+      <div class="input-box">
+        <input class="userinput" type="password" id="registerConfirmPassword" placeholder="Confirm password" required />
+      </div>
+
+
+      <div class="policy">
+        <input type="checkbox" id="registerTerms" required />
+        <label for="registerTerms"><h3>I accept all terms & conditions</h3></label>
+      </div>
+
+      <div class="input-box button">
+        <input type="submit" value="Register Now" />
+      </div>
+
+      <div class="text">
+        <h3>Already have an account? <a href="login.html">Login now</a></h3>
+      </div>
+    </form>
+  </div>
+
+  
+</body>
+</html>

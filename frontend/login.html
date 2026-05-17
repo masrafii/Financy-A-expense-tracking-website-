@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="../css/login.css" />
+
+</head>
+<body>
+
+ <div class="bg-image" style="background-image: url('../assets/login_back.png'); background-size: cover; background-position: center; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+
+  <div class="login-wrapper">
+    <div class="form-container">
+      <div class="tab-header">
+        <span class="active-tab">Log in</span>
+        <a href="register.html" class="inactive-tab">Registration</a>
+      </div>
+
+      <form id="loginForm" action="../backend/login.php" method="POST">
+  <div class="userinput">
+    <input type="text" name="email" id="loginEmail" placeholder="Enter your username" required />
+  </div>
+  <div class="userinput">
+    <input type="password" name="password" id="loginPassword" placeholder="Enter your password" required />
+  </div>
+
+        <div class="forgot">
+          <a href="forget.html">Forgot password?</a>
+        </div>
+        <div class="userinput button">
+          <input type="submit" value="Log in" />
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,515 @@
+/* Team Section Styles */
+.team-section {
+    text-align: center;
+    padding: 60px 20px; /* Padding inside the entire team section block */
+    background-color: #f8f9fa; /* Light background for the section */
+    border-radius: 8px;
+    margin: 40px auto; /* Centers the block horizontally and provides vertical spacing */
+    max-width: 1200px; /* Limits the overall width of the entire section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.team-header h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.team-header p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 700px; /* Max-width for the descriptive paragraph */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center; /* This will center your cards within the 1200px max-width team-section */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line on smaller screens */
+    gap: 30px; /* Space between cards */
+}
+
+.team-member-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    width: 280px; /* Fixed width for each card */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content vertically within the card */
+    text-align: center;
+    flex-shrink: 0; /* Prevents cards from shrinking */
+    flex-grow: 0; /* Prevents cards from growing */
+}
+
+.team-member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.member-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blue-gradient {
+    background: linear-gradient(45deg, #6a82fb, #fc5c7d);
+}
+
+.green-gradient {
+    background: linear-gradient(45deg, #1abc9c, #2ecc71);
+}
+
+.purple-gradient {
+    background: linear-gradient(45deg, #a4508b, #5f0a87);
+}
+
+.member-name {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.member-role {
+    font-size: 1em;
+    color: #007bff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.member-bio {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    color: #666;
+    font-size: 1.5em;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icon:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+.social-icon .fa-facebook-f:hover {
+    color: #3b5998;
+}
+
+.social-icon .fa-instagram:hover {
+    color: #e4405f;
+}
+
+.social-icon .fa-linkedin-in:hover {
+    color: #0077b5;
+}
+
+.social-icon .fa-github:hover {
+    color: #333;
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .team-section { /* Apply dark mode styles to the main section container */
+    background-color: #2c2c2c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .team-header h2 {
+    color: #eee;
+}
+
+body.dark-mode .team-header p {
+    color: #bbb;
+}
+
+body.dark-mode .team-member-card {
+    background-color: #3a3a3a;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .team-member-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .member-name {
+    color: #eee;
+}
+
+body.dark-mode .member-role {
+    color: #90caf9;
+}
+
+body.dark-mode .member-bio {
+    color: #ccc;
+}
+
+body.dark-mode .social-icon {
+    color: #bbb;
+}
+
+body.dark-mode .social-icon:hover {
+    color: #90caf9;
+}
+
+/* ================================
+   Navigation Bar (Copied from main_home.css)
+================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  font-family: 'Inter', sans-serif;
+  transition: transform 0.3s ease-in-out;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+.navbar.visible {
+  transform: translateY(0);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-icon {
+  font-size: 1.4rem;
+}
+
+.nav-name {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.site-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.site-highlight {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+  margin-right: 28px;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #2563eb;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #2563eb;
+  border-radius: 2px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(0.8);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Dark Mode Toggle */
+.dark-toggle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: background 0.3s;
+}
+
+.dark-toggle:hover {
+  background-color: #cbd5e1;
+}
+
+.icon-moon {
+  width: 22px;
+  height: 22px;
+  background: url('data:image/svg+xml;utf8,<svg fill="%232563eb" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M9.37 5.51A7.5 7.5 0 0 0 17 17.13 8 8 0 1 1 9.37 5.51z"/></svg>') no-repeat center center;
+  background-size: contain;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Section */
+.profile-area {
+  position: relative;
+}
+
+.profile-button-custom {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  color: inherit;
+  font-family: inherit;
+  margin-left: 8px;
+}
+
+.profile-avatar-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #2563eb;
+  object-fit: cover;
+}
+
+.profile-icon-fallback-custom {
+  width: 40px;
+  height: 40px;
+  background-color: #60a5fa;
+  border-radius: 50%;
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  border: 2px solid #60a5fa;
+}
+
+.greeting-text-custom {
+  margin-left: 8px;
+  color: #334155;
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.dropdown-arrow-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  color: #64748b;
+}
+
+/* Dropdown Box */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 16px 0;
+  display: none;
+  flex-direction: column;
+  width: 260px;
+  z-index: 1000;
+  margin-top: 16px;
+  border: 1px solid #e2e8f0;
+  transform-origin: top right;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+
+.dropdown-content.show {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.dropdown-item {
+  padding: 14px 24px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #1e293b;
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-radius: 10px;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f5f9;
+  color: #2563eb;
+  transform: translateX(5px);
+}
+
+.dropdown-item.logout-item {
+  color: #ef4444;
+}
+
+.dropdown-item.logout-item:hover {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+/* Emoji icon style */
+.emoji-icon {
+  font-size: 1.35rem;
+  margin-right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f5f9;
+  padding: 6px;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.dropdown-item:hover .emoji-icon {
+  transform: scale(1.15);
+  background-color: #e0f2fe;
+}
+
+/* Dark Mode Navigation Bar and Dropdown styles */
+body.dark-mode .navbar {
+  background-color: #0f172a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .nav-link,
+body.dark-mode .greeting-text-custom {
+  color: #f8fafc;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  color: #60a5fa;
+}
+
+body.dark-mode .nav-link.active::after,
+body.dark-mode .nav-link:hover::after {
+  background-color: #60a5fa;
+}
+
+body.dark-mode .dropdown-content {
+  background-color: #334155;
+  border-color: #475569;
+}
+
+body.dark-mode .dropdown-item {
+  color: #f1f5f9;
+}
+
+body.dark-mode .dropdown-item:hover {
+  background-color: #475569;
+  color: #93c5fd;
+}
+
+body.dark-mode .dropdown-item.logout-item {
+  color: #fca5a5;
+}
+
+body.dark-mode .dropdown-item.logout-item:hover {
+  background-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+body.dark-mode .emoji-icon {
+  background-color: #475569;
+}
+
+body.dark-mode .dropdown-item:hover .emoji-icon {
+  background-color: #1e40af;
+}
+
+/* ================================
+   Footer (Copied from main_home.css)
+================================ */
+.footer {
+  width: 100%;
+  background-color: #0f172a; /* Dark background for the footer */
+  color: #94a3b8; /* Light gray text color */
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+/* Dark Mode Footer styles */
+body.dark-mode .footer {
+  background-color: #020617; /* Even darker background in dark mode */
+  color: #64748b;
+}

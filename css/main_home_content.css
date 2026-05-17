@@ -1,0 +1,331 @@
+/* ================================
+   Main Dashboard Layout
+================================ */
+.root {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "summary items"
+    "form items";
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto 50px auto; /* Centered horizontally with auto margins */
+  padding: 0 20px;
+  flex-grow: 1;
+}
+
+.summary {
+  grid-area: summary;
+  background: linear-gradient(to right, #60a5fa, #6366f1);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-align: center;
+}
+
+.summary h1 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 1.1rem;
+}
+
+.total div {
+  flex: 1;
+  font-weight: 600;
+  text-align: center;
+}
+
+.verticle {
+  border-left: 2px solid rgba(255, 255, 255, 0.4);
+  margin: 0 24px;
+}
+
+/* ================================
+   Transaction History
+================================ */
+#items {
+  grid-area: items;
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+#items h2 {
+  color: #374151;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin-bottom: 20px;
+  gap: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.search-box input[type="text"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+}
+
+.search-box button {
+  background-color: #2563eb;
+  color: #fff;
+  padding: 8px 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+  background-color: #1d4ed8;
+}
+
+/* ================================
+   Transaction Cards
+================================ */
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.transaction-card {
+  background-color: #f9fafb;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.transaction-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.transaction-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.transaction-details .amount.income {
+  color: #16a34a;
+}
+
+.transaction-details .amount.expense {
+  color: #dc2626;
+}
+
+.transaction-details button {
+  background-color: #ef4444;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.transaction-details button:hover {
+  background-color: #b91c1c;
+}
+
+/* ================================
+   Add Transaction Form
+================================ */
+#new {
+  grid-area: form;
+  background: linear-gradient(to bottom, #2563eb, #60a5fa);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+#new h2 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.inputitem {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.inputitem label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.inputitem input,
+.inputitem select {
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: #fff;
+}
+
+.add-transaction-btn {
+  background-color: #ffffff;
+  color: #2563eb;
+  padding: 16px;
+  width: 100%;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.add-transaction-btn:hover {
+  background-color: #e0e7ff;
+  color: #1d4ed8;
+}
+
+/* ================================
+   Responsive Design
+================================ */
+@media (max-width: 992px) {
+  .root {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 100px;
+    align-items: center; /* Center items in column layout */
+  }
+
+  #items,
+  #new,
+  .summary {
+    width: 100%;
+    max-width: 600px; /* Added max-width for better control on smaller screens */
+  }
+
+  body {
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .summary h1 {
+    font-size: 1.75rem;
+  }
+
+  .total {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .verticle {
+    display: none;
+  }
+}
+
+/* ================================
+   Dark Mode Support for these elements
+================================ */
+body.dark-mode #items {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+
+body.dark-mode #items h2 {
+  color: #f8fafc;
+}
+
+body.dark-mode .search-box {
+  background-color: #334155;
+  border-color: #475569;
+}
+
+body.dark-mode .search-box input[type="text"] {
+  color: #f1f5f9;
+}
+
+body.dark-mode .search-box button {
+  background-color: #60a5fa;
+}
+
+body.dark-mode .search-box button:hover {
+  background-color: #3b82f6;
+}
+
+body.dark-mode .transaction-card {
+  background-color: #334155;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .transaction-title {
+  color: #f1f5f9;
+}
+
+body.dark-mode .transaction-details {
+  color: #cbd5e1;
+}
+
+body.dark-mode .transaction-details .amount.income {
+  color: #4ade80; /* Brighter green for dark mode */
+}
+
+body.dark-mode .transaction-details .amount.expense {
+  color: #f87171; /* Brighter red for dark mode */
+}
+
+body.dark-mode .transaction-details button {
+  background-color: #ef4444; /* Keep original for consistency or adjust */
+}
+
+body.dark-mode .transaction-details button:hover {
+  background-color: #b91c1c; /* Keep original for consistency or adjust */
+}
+
+body.dark-mode #new h2,
+body.dark-mode .inputitem label,
+body.dark-mode .inputitem input,
+body.dark-mode .inputitem select {
+  color: #f1f5f9;
+}
+
+body.dark-mode .inputitem input,
+body.dark-mode .inputitem select {
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .add-transaction-btn {
+  background-color: #cbd5e1;
+  color: #1e293b;
+}
+
+body.dark-mode .add-transaction-btn:hover {
+  background-color: #94a3b8;
+  color: #0f172a;
+}

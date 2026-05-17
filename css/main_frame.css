@@ -1,0 +1,392 @@
+/* ================================
+   Reset & Base Styles
+================================ */
+body {
+  margin: 0; /* Add this line to remove default body margins */
+  background-color: #eef2f5; /* old color:  #f0f2f5  */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ================================
+   Navigation Bar (Updated from about_us.css)
+================================ */
+.navbar {
+  position: fixed; /* */
+  top: 0; /* */
+  left: 0; /* */
+  right: 0; /* */
+  height: 70px; /* */
+  background-color: #ffffff; /* */
+  display: flex; /* */
+  justify-content: space-between; /* */
+  align-items: center; /* */
+  padding: 0 32px; /* */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* */
+  z-index: 1000; /* */
+  font-family: 'Inter', sans-serif; /* */
+  transition: transform 0.3s ease-in-out; /* */
+  border-bottom-left-radius: 12px; /* */
+  border-bottom-right-radius: 12px; /* */
+}
+
+.navbar.hidden {
+  transform: translateY(-100%); /* */
+}
+
+.navbar.visible {
+  transform: translateY(0); /* */
+}
+
+.nav-left {
+  display: flex; /* */
+  align-items: center; /* */
+  gap: 10px; /* */
+}
+
+.nav-icon {
+  font-size: 1.4rem; /* */
+}
+
+.nav-name {
+  display: flex; /* */
+  align-items: center; /* */
+  gap: 4px; /* */
+}
+
+.site-text {
+  font-size: 1.25rem; /* */
+  font-weight: 600; /* */
+  color: #1e293b; /* */
+}
+
+.site-highlight {
+  font-size: 1.25rem; /* */
+  font-weight: 600; /* */
+  color: #2563eb; /* */
+}
+
+.nav-center {
+  display: flex; /* */
+  align-items: center; /* */
+  gap: 28px; /* */
+  margin-left: auto; /* */
+  margin-right: 28px; /* */
+}
+
+.nav-link {
+  font-size: 1rem; /* */
+  font-weight: 500; /* */
+  color: #000000; /* */
+  text-decoration: none; /* */
+  position: relative; /* */
+  padding-bottom: 5px; /* */
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #2563eb; /* */
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  content: ''; /* */
+  position: absolute; /* */
+  left: 0; /* */
+  bottom: 0; /* */
+  width: 100%; /* */
+  height: 3px; /* */
+  background-color: #2563eb; /* */
+  border-radius: 2px; /* */
+  transition: transform 0.3s ease-in-out; /* */
+}
+
+.nav-link:hover::after {
+  transform: scaleX(0.8); /* */
+}
+
+.nav-right {
+  display: flex; /* */
+  align-items: center; /* */
+  gap: 15px; /* */
+}
+
+/* ================================
+   Dark Mode Toggle
+================================ */
+.dark-toggle {
+  width: 34px; /* */
+  height: 34px; /* */
+  border-radius: 50%; /* */
+  background-color: #f8fafc; /* */
+  display: flex; /* */
+  align-items: center; /* */
+  justify-content: center; /* */
+  cursor: pointer; /* */
+  border: none; /* */
+  padding: 0; /* */
+  transition: background 0.3s; /* */
+}
+
+.dark-toggle:hover {
+  background-color: #cbd5e1; /* */
+}
+
+.icon-moon {
+  width: 22px; /* */
+  height: 22px; /* */
+  background: url('data:image/svg+xml;utf8,<svg fill="%232563eb" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M9.37 5.51A7.5 7.5 0 0 0 17 17.13 8 8 0 1 1 9.37 5.51z"/></svg>') no-repeat center center; /* */
+  background-size: contain; /* */
+  border-radius: 50%; /* */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* */
+}
+
+/* ================================
+   Profile Section
+================================ */
+.profile-area {
+  position: relative; /* */
+}
+
+.profile-button-custom {
+  display: flex; /* */
+  align-items: center; /* */
+  border: none; /* */
+  background: none; /* */
+  cursor: pointer; /* */
+  padding: 0; /* */
+  color: inherit; /* */
+  font-family: inherit; /* */
+  margin-left: 8px; /* */
+}
+
+.profile-avatar-img {
+  width: 40px; /* */
+  height: 40px; /* */
+  border-radius: 50%; /* */
+  border: 2px solid #2563eb; /* */
+  object-fit: cover; /* */
+}
+
+.profile-icon-fallback-custom {
+  width: 40px; /* */
+  height: 40px; /* */
+  background-color: #60a5fa; /* */
+  border-radius: 50%; /* */
+  display: block; /* */
+  text-align: center; /* */
+  line-height: 40px; /* */
+  font-size: 1.3rem; /* */
+  font-weight: 600; /* */
+  color: #ffffff; /* */
+  border: 2px solid #60a5fa; /* */
+}
+
+.greeting-text-custom {
+  margin-left: 8px; /* */
+  color: #334155; /* */
+  font-size: 1rem; /* */
+  font-weight: 500; /* */
+  white-space: nowrap; /* */
+}
+
+.dropdown-arrow-icon {
+  width: 16px; /* */
+  height: 16px; /* */
+  margin-left: 4px; /* */
+  color: #64748b; /* */
+}
+
+/* ================================
+   Dropdown Box
+================================ */
+.dropdown-content {
+  position: absolute; /* */
+  top: 100%; /* */
+  right: 0; /* */
+  background-color: #ffffff; /* */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* */
+  border-radius: 16px; /* */
+  padding: 16px 0; /* */
+  display: none; /* */
+  flex-direction: column; /* */
+  width: 260px; /* */
+  z-index: 1000; /* */
+  margin-top: 16px; /* */
+  border: 1px solid #e2e8f0; /* */
+  transform-origin: top right; /* */
+  opacity: 0; /* */
+  transform: scale(0.95); /* */
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out; /* */
+}
+
+.dropdown-content.show {
+  display: flex; /* */
+  opacity: 1; /* */
+  transform: scale(1); /* */
+}
+
+.dropdown-item {
+  padding: 14px 24px; /* */
+  font-size: 1.05rem; /* */
+  font-weight: 500; /* */
+  color: #1e293b; /* */
+  text-decoration: none; /* */
+  transition: background 0.25s, color 0.25s; /* */
+  display: flex; /* */
+  align-items: center; /* */
+  gap: 14px; /* */
+  border-radius: 10px; /* */
+}
+
+.dropdown-item:hover {
+  background-color: #f1f5f9; /* */
+  color: #2563eb; /* */
+  transform: translateX(5px); /* */
+}
+
+.dropdown-item.logout-item {
+  color: #ef4444; /* */
+}
+
+.dropdown-item.logout-item:hover {
+  background-color: #fee2e2; /* */
+  color: #dc2626; /* */
+}
+
+/* Emoji icon style */
+.emoji-icon {
+  font-size: 1.35rem; /* */
+  margin-right: 10px; /* */
+  display: inline-flex; /* */
+  align-items: center; /* */
+  justify-content: center; /* */
+  background-color: #f1f5f9; /* */
+  padding: 6px; /* */
+  border-radius: 50%; /* */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); /* */
+  transition: transform 0.2s ease; /* */
+}
+
+.dropdown-item:hover .emoji-icon {
+  transform: scale(1.15); /* */
+  background-color: #e0f2fe; /* */
+}
+
+/* ================================
+   Dark Mode Support
+================================ */
+body.dark-mode {
+  background-color: #1e293b; /* */
+  color: #f1f5f9; /* */
+}
+
+body.dark-mode .navbar {
+  background-color: #0f172a; /* */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* */
+}
+
+body.dark-mode .nav-link,
+body.dark-mode .greeting-text-custom {
+  color: #f8fafc; /* */
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  color: #60a5fa; /* */
+}
+
+body.dark-mode .nav-link.active::after,
+body.dark-mode .nav-link:hover::after {
+  background-color: #60a5fa; /* */
+}
+
+body.dark-mode .dropdown-content {
+  background-color: #334155; /* */
+  border-color: #475569; /* */
+}
+
+body.dark-mode .dropdown-item {
+  color: #f1f5f9; /* */
+}
+
+body.dark-mode .dropdown-item:hover {
+  background-color: #475569; /* */
+  color: #93c5fd; /* */
+}
+
+body.dark-mode .dropdown-item.logout-item {
+  color: #fca5a5; /* */
+}
+
+body.dark-mode .dropdown-item.logout-item:hover {
+  background-color: #7f1d1d; /* */
+  color: #fca5a5; /* */
+}
+
+body.dark-mode .emoji-icon {
+  background-color: #475569; /* */
+}
+
+body.dark-mode .dropdown-item:hover .emoji-icon {
+  transform: scale(1.15); /* */
+  background-color: #1e40af; /* */
+}
+
+/* ================================
+   Footer
+================================ */
+.footer {
+  width: 100%;
+  background-color: #0f172a; /* Dark background for the footer */
+  color: #94a3b8; /* Light gray text color */
+  text-align: center;
+  padding: 20px 0;
+  /* margin-top: 50px; REMOVED THIS */
+  font-size: 0.9rem;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+/* Dark Mode Footer styles */
+body.dark-mode .footer {
+  background-color: #020617; /* Even darker background in dark mode */
+  color: #64748b;
+}
+
+
+
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between emoji and logo */
+}
+
+.nav-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0; /* prevents it from disappearing */
+}
+
+.site-logo {
+  height: 38px;   /* smaller so it won’t overlap emoji */
+  width: auto;
+  display: block;
+  flex-shrink: 0; /* prevents resizing conflict */
+}
+
+
+
+
+
+

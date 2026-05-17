@@ -1,0 +1,172 @@
+/* Reset and Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* */
+}
+
+/* VIDEO BACKGROUND */
+/* This section is for a video background, but the HTML is currently using an image background. 
+   Keeping it here in case you plan to switch to video later. */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* IMAGE BACKGROUND (modified for better fit) */
+.bg-image {
+  background-image: url('../assets/login_back.png'); /* */
+  background-size: cover; /* - Key change to make image fill the screen */
+  background-position: center; /* */
+  background-repeat: no-repeat; /* Ensure image doesn't repeat */
+  position: fixed; /* */
+  top: 0; /* */
+  left: 0; /* */
+  width: 100%; /* */
+  height: 100%; /* */
+  z-index: -1; /* */
+  background-color: #000;  /*- Optional: background behind image, visible if 'contain' was used */
+}
+
+
+/* Login Container */
+.login-wrapper {
+  height: 100vh; /* */
+  width: 100%; /* */
+  display: flex; /* */
+  justify-content: flex-end; /* */
+  align-items: center; /* */
+  padding-right: 60px; /* */
+}
+
+/* Form Box */
+.form-container {
+  background: rgba(0, 0, 0, 0.4); /* ↓ Reduced opacity for more transparency */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px); /* ✅ For Safari support */
+  padding: 40px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 255, 100, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2); /* optional: subtle border for contrast */
+}
+
+
+/* Tabs */
+.tab-header {
+  display: flex; /* */
+  justify-content: space-between; /* */
+  margin-bottom: 30px; /* */
+  border-bottom: 2px solid #00ff99; /* */
+  padding-bottom: 10px; /* */
+}
+
+.tab-header span,
+.tab-header a {
+  font-size: 18px; /* */
+  cursor: pointer; /* */
+  text-decoration: none; /* */
+  color: #888; /* */
+  transition: color 0.3s ease; /* */
+}
+
+.tab-header .active-tab {
+  color: #00ff99; /* */
+  font-weight: bold; /* */
+}
+
+.tab-header a:hover {
+  color: #00ff99; /* */
+  text-decoration: underline; /* */
+}
+
+/* Inputs */
+.userinput {
+  margin-bottom: 20px; /* */
+}
+
+.userinput input {
+  width: 100%; /* */
+  padding: 12px; /* */
+  font-size: 15px; /* */
+  background-color: #1f1f1f; /* */
+  color: #fff; /* */
+  border: none; /* */
+  border-radius: 6px; /* */
+  transition: border 0.3s ease; /* */
+}
+
+.userinput input::placeholder {
+  color: #aaa; /* */
+}
+
+.userinput input:focus {
+  outline: none; /* */
+  border: 1px solid #00ff99; /* */
+}
+
+/* Forgot Password */
+.forgot {
+  text-align: right; /* */
+  margin-bottom: 20px; /* */
+}
+
+.forgot a {
+  font-size: 14px; /* */
+  color: #00ff99; /* */
+  text-decoration: none; /* */
+}
+
+.forgot a:hover {
+  text-decoration: underline; /* */
+}
+
+/* Submit Button */
+.userinput.button input[type="submit"] {
+  background-color: #00aa66; /* */
+  color: #fff; /* */
+  font-weight: bold; /* */
+  border: none; /* */
+  padding: 12px; /* */
+  border-radius: 6px; /* */
+  transition: background 0.3s ease; /* */
+  cursor: pointer; /* */
+}
+
+.userinput.button input[type="submit"]:hover {
+  background-color: #00cc88; /* */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .login-wrapper {
+    justify-content: center; /* */
+    padding: 20px; /* */
+  }
+
+  .form-container {
+    width: 100%; /* */
+    padding: 30px 20px; /* */
+  }
+
+  .tab-header {
+    flex-direction: column; /* */
+    align-items: center; /* */
+    gap: 10px; /* */
+  }
+}
+
+
